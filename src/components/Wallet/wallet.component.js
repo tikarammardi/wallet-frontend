@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import { TRANSACTION_TYPE } from "../../utils/constants";
+import { useNavigate } from "react-router-dom";
 
 function WalletComponent(props) {
   const {
@@ -34,7 +35,7 @@ function WalletComponent(props) {
     handleTransactionAmountChange,
     handleTransactionDescriptionChange,
   } = props;
-
+  const navigate = useNavigate();
   return !loading ? (
     walletData?.id ? (
       <Grid
@@ -61,7 +62,16 @@ function WalletComponent(props) {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small">Learn More</Button>
+                <Button
+                  size="small"
+                  onClick={() => {
+                    navigate("/transaction", {
+                      state: walletData,
+                    });
+                  }}
+                >
+                  View Transaction Details
+                </Button>
               </CardActions>
             </React.Fragment>
           </Card>
