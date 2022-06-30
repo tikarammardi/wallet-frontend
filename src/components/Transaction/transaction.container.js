@@ -1,17 +1,9 @@
 import React, { useState, useEffect } from "react";
 import TransactionComponent from "./transaction.component";
-import {
-  createWallet,
-  getWallet,
-  initiateWalletTransaction,
-  getWalletTransaction,
-} from "../../service/wallet.service";
-import { TRANSACTION_TYPE, WALLET_OBJECT } from "../../utils/constants";
+import { getWalletTransaction } from "../../service/wallet.service";
 import { useLocation } from "react-router-dom";
 function TransactionContainer(props) {
   const location = useLocation();
-
-  console.log("localtion", location);
   const state = location?.state;
   const [transactionData, setTransactionData] = useState([]);
   const [limit, setLimit] = useState(10);
@@ -66,12 +58,10 @@ function TransactionContainer(props) {
   };
 
   const handleChangePage = (event, newPage) => {
-    console.log("new page", newPage);
     setPage(newPage);
   };
 
   const handleChangeRowsPerPage = (event) => {
-    console.log("handle page change", event);
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };

@@ -14,6 +14,7 @@ import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import { visuallyHidden } from "@mui/utils";
 import { TRANSACTION_TYPE } from "../../utils/constants";
+import { CSVLink } from "react-csv";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -205,28 +206,26 @@ export default function TransactionComponent(props) {
                   );
                 }
               )}
-              {emptyRows > 0 && (
-                <TableRow
-                  style={{
-                    height: 53 * emptyRows,
-                  }}
-                >
-                  <TableCell colSpan={6} />
-                </TableRow>
-              )}
             </TableBody>
           </Table>
         </TableContainer>
-
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
-          count={rows.length}
+          count={100}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
+        <CSVLink
+          data={rows}
+          filename={`transaction_${page + 1}.csv`}
+          className="btn btn-primary"
+          target="_blank"
+        >
+          Download CSV
+        </CSVLink>
       </Paper>
     </Box>
   );
