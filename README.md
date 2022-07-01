@@ -1,9 +1,9 @@
 ### Wallet System Frontend
 
-Frontend UI for [https://github.com/tikarammardi/wallet-system] (https://github.com/tikarammardi/wallet-system)
+Frontend UI for [https://github.com/tikarammardi/wallet-system] (https://github.com/tikarammardi/wallet-system)\
 
-Live Demo [https://wallet-frontend-teal.vercel.app/](https://wallet-frontend-teal.vercel.app/)
-Loom Link [https://www.loom.com/share/64c9f3c2715546dd95be7f4e8110151f](https://www.loom.com/share/64c9f3c2715546dd95be7f4e8110151f)
+Live Demo [https://wallet-frontend-teal.vercel.app/](https://wallet-frontend-teal.vercel.app/)\
+Loom Link [https://www.loom.com/share/64c9f3c2715546dd95be7f4e8110151f](https://www.loom.com/share/64c9f3c2715546dd95be7f4e8110151f)\
 
 ## Available Scripts
 

@@ -17,6 +17,7 @@ function WalletContainer() {
   const [transactionType, setTransactionType] = useState(
     TRANSACTION_TYPE.CREDIT
   );
+  const [errorMsg, setErrorMsg] = useState(null);
 
   const handleTransactionTypeChange = (event, tnxType) => {
     setTransactionType(tnxType);
@@ -49,6 +50,8 @@ function WalletContainer() {
       setIsLoading(false);
     } catch (error) {
       console.log("error createing wallet", error);
+      const msg = error?.message;
+      setErrorMsg(msg ?? "Something went wrong");
       setIsLoading(false);
     }
   };
@@ -85,6 +88,8 @@ function WalletContainer() {
       setWalletData(newWalletInfo);
       setIsLoading(false);
     } catch (error) {
+      const msg = error?.message;
+      setErrorMsg(msg ?? "Something went wrong");
       setIsLoading(false);
     }
   };
@@ -107,6 +112,8 @@ function WalletContainer() {
       setIsLoading(false);
     } catch (error) {
       console.log("error in getting wallet details", error);
+      const msg = error?.message;
+      setErrorMsg(msg ?? "Something went wrong");
       setIsLoading(false);
     }
   };
@@ -130,6 +137,7 @@ function WalletContainer() {
       transactionDescription={transactionDescription}
       handleTransactionAmountChange={handleTransactionAmountChange}
       handleTransactionDescriptionChange={handleTransactionDescriptionChange}
+      errorMsg={errorMsg}
     />
   );
 }

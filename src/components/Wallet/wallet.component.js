@@ -2,7 +2,7 @@ import React from "react";
 
 import {
   TextField,
-  FormLabel,
+  Alert,
   Grid,
   Button,
   Card,
@@ -34,6 +34,7 @@ function WalletComponent(props) {
     handleWalletTransactionClick,
     handleTransactionAmountChange,
     handleTransactionDescriptionChange,
+    errorMsg,
   } = props;
   const navigate = useNavigate();
   return !loading ? (
@@ -46,20 +47,20 @@ function WalletComponent(props) {
         justifyContent="center"
         style={{ minHeight: "100vh" }}
       >
+        {errorMsg && <Alert severity="error">{errorMsg}</Alert>}
+
         <Grid item xs={6} sx={{ width: "700px" }}>
           <Card sx={{}}>
             <React.Fragment>
               <CardContent>
-                <Typography sx={{ fontSize: 14 }} gutterBottom>
+                <Typography sx={{ fontSize: 30, fontWeight: 900 }} gutterBottom>
                   Your Wallet
                 </Typography>
 
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                <Typography sx={{ mb: 1.5 }}>
                   Name: {walletData?.name}
                 </Typography>
-                <Typography variant="body2">
-                  Balance: {walletData?.balance}
-                </Typography>
+                <Typography>Balance: {walletData?.balance}</Typography>
               </CardContent>
               <CardActions>
                 <Button
