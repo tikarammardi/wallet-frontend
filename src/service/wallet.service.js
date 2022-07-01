@@ -12,7 +12,7 @@ export const createWallet = async (payload) => {
     const response = await axios.post(URL, data);
     return response;
   } catch (error) {
-    return error;
+    throw error;
   }
 };
 
@@ -22,7 +22,7 @@ export const getWallet = async (payload) => {
     const response = await axios.get(URL);
     return response;
   } catch (error) {
-    return error;
+    throw error;
   }
 };
 
@@ -38,7 +38,7 @@ export const initiateWalletTransaction = async (payload) => {
     const response = await axios.post(URL, data);
     return response;
   } catch (error) {
-    return error;
+    throw error;
   }
 };
 
@@ -48,6 +48,6 @@ export const getWalletTransaction = async (payload) => {
     const response = await axios.get(URL);
     return response;
   } catch (error) {
-    return error;
+    throw error;
   }
 };

@@ -50,7 +50,7 @@ function WalletContainer() {
       setIsLoading(false);
     } catch (error) {
       console.log("error createing wallet", error);
-      const msg = error?.message;
+      const msg = error?.response?.data?.message;
       setErrorMsg(msg ?? "Something went wrong");
       setIsLoading(false);
     }
@@ -88,7 +88,8 @@ function WalletContainer() {
       setWalletData(newWalletInfo);
       setIsLoading(false);
     } catch (error) {
-      const msg = error?.message;
+      console.log("error in transact", error);
+      const msg = error?.response?.data?.message;
       setErrorMsg(msg ?? "Something went wrong");
       setIsLoading(false);
     }
@@ -112,7 +113,7 @@ function WalletContainer() {
       setIsLoading(false);
     } catch (error) {
       console.log("error in getting wallet details", error);
-      const msg = error?.message;
+      const msg = error?.response?.data?.message;
       setErrorMsg(msg ?? "Something went wrong");
       setIsLoading(false);
     }
