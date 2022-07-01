@@ -4,6 +4,7 @@ Frontend UI for [https://github.com/tikarammardi/wallet-system] (https://github.
 
 Live Demo [https://wallet-frontend-teal.vercel.app/](https://wallet-frontend-teal.vercel.app/)\
 Loom Link [https://www.loom.com/share/64c9f3c2715546dd95be7f4e8110151f](https://www.loom.com/share/64c9f3c2715546dd95be7f4e8110151f)\
+[https://www.loom.com/share/bc225d7989454205b36428c8a148a2ea](https://www.loom.com/share/bc225d7989454205b36428c8a148a2ea)
 
 ## Available Scripts
 
