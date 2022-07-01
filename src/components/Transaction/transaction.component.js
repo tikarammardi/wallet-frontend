@@ -1,7 +1,7 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
-import { Table, Chip } from "@mui/material";
+import { Table, Chip, CircularProgress, Grid } from "@mui/material";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
@@ -155,11 +155,11 @@ export default function TransactionComponent(props) {
     handleClick,
     handleChangePage,
     handleChangeRowsPerPage,
-    emptyRows,
     rows,
+    loading,
   } = props;
 
-  return (
+  return !loading ? (
     <Box sx={{ width: "100%" }}>
       <Paper sx={{ width: "100%", mb: 2 }}>
         <EnhancedTableToolbar />
@@ -228,5 +228,18 @@ export default function TransactionComponent(props) {
         </CSVLink>
       </Paper>
     </Box>
+  ) : (
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
+      style={{ minHeight: "100vh" }}
+    >
+      <Box sx={{ display: "flex" }}>
+        <CircularProgress />
+      </Box>
+    </Grid>
   );
 }
